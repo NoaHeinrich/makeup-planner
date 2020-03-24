@@ -1,9 +1,10 @@
-import { React, useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 
 const CategoryIndex = () => {
+
   return(
     <div>
-
+      <h1>Categories</h1>
     </div>
   )
 }
