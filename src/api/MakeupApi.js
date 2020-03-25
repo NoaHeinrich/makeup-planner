@@ -4,3 +4,13 @@ const fetchMakeupByBrandName = brandName => {
   return fetch(`${URL}?brand=${brandName}`)
   .then(resp => resp.json())
 }
+
+const fetchMakeupByCategory = category => {
+  return fetch(`${URL}?brand=${category}`)
+  .then(resp => resp.json())
+}
+
+export default {
+  fetchMakeupByBrandName,
+  fetchMakeupByCategory
+}
