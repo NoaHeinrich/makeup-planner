@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import {Row, Col} from 'reactstrap'
+
 import MakeupApi from '../api/MakeupApi'
 import ProductCard from '../components/ProductCard/ProductCard'
+
 const BrandDisplay = (props) => {
   const [products, setProducts] = useState([])
   
@@ -11,13 +14,13 @@ const BrandDisplay = (props) => {
 
   const renderCards = () => {
     return products.map((product, index) => {
-      return <ProductCard key={index} product={product}/>
+      return <Col sm="3"><ProductCard key={index} product={product}/></Col>
     })
   }
 
   return(
-    <div>
-      {renderCards()}
+    <div> 
+      <Row>{renderCards()}</Row>
     </div>
   )
 }
