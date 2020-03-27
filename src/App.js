@@ -6,9 +6,11 @@ import HomePage from './pages/HomePage'
 import CategoryIndex from './pages/CategoryIndex'
 import BrandIndex from './pages/BrandIndex'
 import BrandDisplay from './pages/BrandDisplay'
+import NavBar from './components/NavBar/NavBar'
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <BrowserRouter>
         <div>
           <Route exact path='/' component={HomePage}/>
