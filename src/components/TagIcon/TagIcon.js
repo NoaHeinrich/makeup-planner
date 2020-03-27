@@ -1,26 +1,28 @@
 import React, {useState} from 'react'
 import { FaLeaf, FaDog, FaRegHandshake, FaTree} from 'react-icons/fa'
 import {GiEarthAfricaEurope, GiNoseSide } from 'react-icons/gi'
-import { Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 const TagIcon = (props) => {
   const icons = {
-    'Vegan': <FaLeaf />,
-    'cruelty free': <FaDog />,
-    'Fair Trade': <FaRegHandshake />,
-    'Natural': <FaTree />,
-    'Organic': <FaTree />,
-    'EcoCert': <GiEarthAfricaEurope />,
-    'Hypoallergenic': <GiNoseSide />
+    'Vegan': <FaLeaf className="tag-icon"/>,
+    'cruelty free': <FaDog className="tag-icon"/>,
+    'Fair Trade': <FaRegHandshake className="tag-icon"/>,
+    'Natural': <FaTree className="tag-icon"/>,
+    'Organic': <FaTree className="tag-icon"/>,
+    'EcoCert': <GiEarthAfricaEurope className="tag-icon"/>,
+    'Hypoallergenic': <GiNoseSide className="tag-icon"/>
   }
-  const [popover, setPopover] = useState(false)
-  const toggle = () => setPopover(!popover)
-  return(
-    <div>
-      {icons[props.tag]}
-      <Popover plcement="bottom" isOpen={popover}>
 
-      </Popover>
-    </div>
-  )
+  if (!(props.tag in icons)) {
+    return(<div></div>)
+  } else {
+    return(
+      <div className="icon-container">
+        {icons[props.tag]}
+        <p className="icon-text">{props.tag}</p>
+      </div>
+    )
+  }
+  
 }
+export default TagIcon
